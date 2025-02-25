@@ -21,7 +21,11 @@ function MoviesStack() {
       <Stack.Screen
         name="MovieDetails"
         component={MovieDetailsScreen}
-        options={{ title: "Movie Details" }} 
+        options={{ 
+          title: "Movie Details",
+          headerBackTitle: "Back",
+          headerTintColor: "#1c1c1c",
+        }} 
       />
     </Stack.Navigator>
   );
@@ -38,7 +42,11 @@ function TVStack() {
       <Stack.Screen
         name="MediaDetails" 
         component={MovieDetailsScreen}
-        options={{ title: "TV Show Details" }} 
+        options={{ 
+          title: "TV Show Details",
+          headerBackTitle: "Back",
+          headerTintColor: "##1c1c1c",
+         }} 
       />
     </Stack.Navigator>
   );
@@ -56,7 +64,11 @@ function SearchStack() {
       <Stack.Screen
         name="MovieDetails"
         component={MovieDetailsScreen}
-        options={{ title: "Movie/Show Details" }} 
+        options={{ 
+          title: "Movie/Show Details",
+          headerBackTitle: "Back",
+          headerTintColor: "#1c1c1c",
+         }} 
       />
     </Stack.Navigator>
   );
@@ -70,7 +82,7 @@ const NavigationBar = () => {
         detachInactiveScreens={true}
         initialRouteName="Movies"
         screenOptions={{
-          tabBarActiveTintColor: "#6b03fc",
+          tabBarActiveTintColor: "#7c41fa",
           tabBarInactiveTintColor: "#777",
           tabBarStyle: { backgroundColor: "white" },
         }}

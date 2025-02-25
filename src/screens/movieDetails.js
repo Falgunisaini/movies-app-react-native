@@ -33,19 +33,19 @@ const MovieDetailsScreen = ({ route }) => {
   }, [id, type]);
 
   if (!media) {
-    return <Text>Loading...</Text>;
+    return <Text style={styles.loadingText}>Loading...</Text>;
   }
 
   return (
     <View style={styles.container}>
+      <Text style={styles.title}>{media.title || media.name}</Text>
       <Image
         source={{ uri: `https://image.tmdb.org/t/p/w500${media.poster_path}` }}
         style={styles.image}
       />
-      <Text style={styles.title}>{media.title || media.name}</Text>
-      <Text>{media.overview ? `Description: ${media.overview}` : "Description: NA"}</Text>
-      <Text>Release Date: {media.release_date || media.first_air_date}</Text>
-      <Text>Rating: {media.vote_average}</Text>
+      <Text style={styles.margintop}><Text style={styles.headingText}>Description: </Text>{media.overview ? `${media.overview}` : "NA"}</Text>
+      <Text style={styles.margintop}><Text style={styles.headingText}>Release Date:</Text> {media.release_date || media.first_air_date}</Text>
+      <Text  style={styles.margintop}><Text style={styles.headingText}>Rating:</Text> {media.vote_average}</Text>
     </View>
   );
 };
@@ -54,17 +54,33 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 16,
+    marginBottom: 5,
   },
   image: {
     width: "100%",
     height: 300,
     resizeMode: "contain",
   },
+  margintop:{
+    marginTop: 10,
+  },
   title: {
     fontSize: 24,
     fontWeight: "bold",
     marginVertical: 8,
+    color:"#1c1c1c",
+    textAlign: "center",
   },
+  loadingText: {
+    marginTop: 10,
+    fontSize: 18,
+    color: "#777",
+  },
+  headingText:{
+    fontWeight: "bold",
+    color:"#1c1c1c",
+    padding: 2, 
+  }
 });
 
 export default MovieDetailsScreen;
