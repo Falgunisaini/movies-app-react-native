@@ -1,4 +1,4 @@
-export default {
+module.exports ={
   presets: [
     'babel-preset-expo',
     '@react-native/babel-preset'
@@ -24,4 +24,3 @@ export default {
       },
     ],
   };
-  
